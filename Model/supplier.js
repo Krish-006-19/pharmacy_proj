@@ -12,7 +12,7 @@ const supplierSchema = new Schema({
   Batch_number: {
     type:String,
     required: true
-  }
+  },
   address: {
      type: String 
     },
