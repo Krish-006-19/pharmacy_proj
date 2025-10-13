@@ -1,17 +1,18 @@
-
 const mongoose = require("mongoose");
 
 const customerSchema = new mongoose.Schema({
-  name: {
+  pharmacy_name: {
      type: String, 
      required: true
      },
-  contact: {
+  contact_number: {
      type: String,
      minLength: 10
     },
-  age: {
-     type: Number 
+  License: {
+     type: String,
+     required: true,
+     unique: true
     },
   address: { 
     type: String 
