@@ -9,9 +9,12 @@ const pharmacySchema = new Schema(
     },
     address: {
       type: String,
+      required:true
     },
-    contact: {
+    phone: {
       type: String,
+      required: true,
+      match: [/^\d{10}$/, "Phone number must be 10 digits"],
     },
     medicine_data: [
       {
