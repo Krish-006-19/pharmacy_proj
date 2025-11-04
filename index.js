@@ -20,7 +20,7 @@ mongoose.connect(MONGO_URL)
 const app = express();
 
 // Allow requests from your React app
-app.use(cors({origin: ["http://localhost:5173", "https://yourfrontenddomain.com"],credentials: true}));
+app.use(cors({origin: ["http://localhost:5173", "https://pharmaims.netlify.app/", "https://pharmaims.netlify.app/suppliers", "https://pharmaims.netlify.app/pharmacies", "https://pharmaims.netlify.app/sales"],credentials: true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
