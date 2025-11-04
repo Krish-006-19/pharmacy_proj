@@ -24,6 +24,7 @@ app.use(cors({origin: ["http://localhost:5173", "https://yourfrontenddomain.com"
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use('/pharmacy', require('./Router/pharmacy'));
 app.use('/medicine', require('./Router/medicine'));
 app.use('/order', require('./Router/order'));
 app.use('/supplier', require('./Router/supplier'));
