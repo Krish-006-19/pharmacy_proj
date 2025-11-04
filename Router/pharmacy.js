@@ -31,14 +31,25 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// router.post('/', async (req, res) => {
+//   try {
+//     const payload = req.body || {};
+//     const created = await Pharmacy.create(payload);
+//     return res.status(201).json({ success: true, data: created });
+//   } catch (err) {
+//     console.error('Error creating pharmacy:', err);
+//     return res.status(500).json({ success: false, message: 'Server error' });
+//   }
+// });
+
 router.post('/', async (req, res) => {
   try {
     const payload = req.body || {};
     const created = await Pharmacy.create(payload);
     return res.status(201).json({ success: true, data: created });
   } catch (err) {
-    console.error('Error creating pharmacy:', err);
-    return res.status(500).json({ success: false, message: 'Server error' });
+    console.error('Error creating pharmacy:', err.message, err.errors);
+    return res.status(500).json({ success: false, message: err.message });
   }
 });
 
